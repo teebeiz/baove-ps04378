@@ -4,12 +4,14 @@ import java.sql.*;
 
 public class ConnectDatabase 
 {
+    //connect Somee
      private static Connection con = null;
      private static String url = "jdbc:sqlserver://";
-     private static String serverName= "localhost";
+     private static String serverName= "assignment.mssql.somee.com";
      private static String portNumber = "1433";
-     private static String databaseName= "shop_shoe";
-
+     private static String databaseName= "assignment";
+    //
+     
      public ConnectDatabase()
      {}
      
@@ -22,8 +24,9 @@ public class ConnectDatabase
      {
           try
           {
-               Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver"); 
-               con = DriverManager.getConnection(getConnectionUrl(),"sa","");
+               Class.forName("com.mysql.jdbc.Driver"); 
+               //con = DriverManager.getConnection(getConnectionUrl(),"thanhbinh","Teebeizngo14121997");
+               con = DriverManager.getConnection("jdbc:mysql://node180774-thanhbinh.jelastic.servint.net/shop_shoes","root","GQAqrf19680");
                System.out.print("Connect Complete");
           }
           catch(Exception e)
